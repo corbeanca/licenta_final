@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Gps_Agenda</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="title_activity_config">Config default settings</string>
+
+    <string name="dummy_content">GPS\nAGENDA</string>
+    <string name="title_activity_principal">Principal</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="map_type_none">None</string>
+    <string name="map_type_normal">Normal</string>
+    <string name="map_type_terrain">Terrain</string>
+    <string name="map_type_satellite">Satellite</string>
+    <string name="map_type_hybrid">Hybrid</string>
+    <string name="principal_search_button">SEARCH</string>
+    <string name="principal_hint_place">What place do you need?</string>
+    <string name="header_title2">GPS Agenda</string>
+    <string name="header_name">Barbu Alexandru</string>
+    <string name="config_walk">Walk</string>
+    <string name="config_car">Car</string>
+    <string name="config_transit">Transit</string>
+    <string name="config_bicycle">Bicycle</string>
+    <string name="config_save">SAVE</string>
+    <string name="config_from">From</string>
+    <string name="config_to">To</string>
+    <string name="config_parse">Time parsing didntt work. Try again!</string>
+    <string name="online_frag_ecotext">When battery level is critical use lower accuracy</string>
+    <string name="online_frag_eco">Battery Saving Mode</string>
+    <string name="online_frag_sw">Switch</string>
+    <string name="online_frag_off">Turn Off service entirely</string>
+    <string name="online_frag_acc">Default accuracy for new PINs (1 - highest, 5 - lowest)</string>
+    <string name="online_frag_radius">Default PIN radius (1 - smallest, 5 - biggest)</string>
+    <string name="online_frag_shape">Shape</string>
+    <string name="online_frag_color">Color</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+
+    <string-array name="online_color">
+        <item>@string/red</item>
+        <item>@string/green</item>
+        <item>@string/blue</item>
+        <item>@string/yellow</item>
+    </string-array>
+
+    <string-array name="online_shape">
+        <item><string name="circle">Circle</string> </item>
+        <item ><string name="square">Square</string></item>
+        <item> <string name="shield">Shield</string> </item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

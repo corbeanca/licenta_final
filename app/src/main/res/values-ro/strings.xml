@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gps_Agenda</string>
+    <string name="map_type_hybrid">Hibrid</string>
+    <string name="map_type_none">Niciun fel</string>
+    <string name="map_type_normal">Normal</string>
+    <string name="map_type_satellite">Satelit</string>
+    <string name="map_type_terrain">Relief</string>
+    <string name="navigation_drawer_close">Inchide exploratorul</string>
+    <string name="navigation_drawer_open">Deschide exploratorul</string>
+    <string name="title_activity_config">Configurează setările de bază</string>
+    <string name="title_activity_maps">Hartă</string>
+    <string name="title_activity_principal">Hartă Principală</string>
+    <string name="config_bicycle">Bicicletă</string>
+    <string name="config_car">Mașină</string>
+    <string name="config_from">De la ora</string>
+    <string name="config_save">Salvează</string>
+    <string name="config_to">La ora</string>
+    <string name="config_transit">Tranzit</string>
+    <string name="config_walk">Mers</string>
+    <string name="dummy_content">Agendă GPS</string>
+    <string name="config_parse">Nu a mers parsarea timpului, introduceti din nou respectand formatul</string>
+</resources>
