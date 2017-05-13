@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class Online extends Activity
        implements AdapterView.OnItemClickListener
 {   long x;
+    var marius;
     ListView list_color;
     ListView list_shape;
     SeekBar seek_acc;
