@@ -1,0 +1,10 @@
+Gps_Agenda.iws
+.gradle
+build/
+gradle/
+.idea
+app/build
+app/src/test
+app/src/AndroidTest
+app/src/debug
+local.properties

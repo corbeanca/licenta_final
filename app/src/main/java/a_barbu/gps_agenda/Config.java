@@ -1,22 +1,22 @@
-package a_barbu.gps_agenda;
+        package a_barbu.gps_agenda;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+        import android.app.AlarmManager;
+        import android.app.PendingIntent;
+        import android.content.Intent;
+        import android.content.SharedPreferences;
+        import android.preference.PreferenceManager;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.ImageView;
+        import android.widget.RadioButton;
+        import android.widget.RadioGroup;
+        import android.widget.Toast;
+        import java.text.ParseException;
+        import java.text.SimpleDateFormat;
+        import java.util.Calendar;
 
 
 public class Config extends AppCompatActivity {
@@ -30,6 +30,7 @@ public class Config extends AppCompatActivity {
     String mes;
     SimpleDateFormat set1 = new SimpleDateFormat("HH:mm");
     SimpleDateFormat set2 = new SimpleDateFormat("HH:mm");
+    ImageView default_move;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class Config extends AppCompatActivity {
 //        }
         rg = (RadioGroup) findViewById(R.id.rgroup);
         setupSaveButton();
+        default_move =(ImageView)findViewById(R.id.default_photo);
     }
 
     private void setupSaveButton(){
@@ -84,9 +86,9 @@ public class Config extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
-      //  testare --- merge !
+        //  testare --- merge !
         // calendar.set(Calendar.HOUR_OF_DAY, 11);
-      //  calendar.set(Calendar.MINUTE,31);
+        //  calendar.set(Calendar.MINUTE,31);
 
     }
 
@@ -98,12 +100,26 @@ public class Config extends AppCompatActivity {
         editor.putInt("Movement", radiobuttonid);
         editor.commit();
 
-        // AICI trebuie dat trigger animatie
+        switch (v.getId()){
+            case R.id.config_car:
+                default_move.setImageResource(R.mipmap.car);
+                break;
+            case  R.id.config_bicycle:
+                default_move.setImageResource(R.mipmap.bicycle);
+                break;
+            case R.id.config_transit:
+                default_move.setImageResource(R.mipmap.transit);
+                break;
+            case R.id.config_walk:
+                default_move.setImageResource(R.mipmap.walk);
+                break;
+        }
+
     }
 
     //public void SelectMove(View v){
-   //     boolean checked = ( RadioButton) v;
-   // }
+    //     boolean checked = ( RadioButton) v;
+    // }
 
     private void setTime (){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -126,5 +142,4 @@ public class Config extends AppCompatActivity {
 
 
 
-
-    }
+}

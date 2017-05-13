@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "231495338369",
+    "firebase_url": "https://gpsagenda-6de2f.firebaseio.com",
+    "project_id": "gpsagenda-6de2f",
+    "storage_bucket": "gpsagenda-6de2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231495338369:android:eec148d3b4cafa6c",
+        "android_client_info": {
+          "package_name": "a_barbu.gps_agenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231495338369-f5qmta3p9tmk47fv37vfiad3cl3q42ih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "a_barbu.gps_agenda",
+            "certificate_hash": "A65BB2CD10C1C6AB740C64FAF7FF36E31772D7AF"
+          }
+        },
+        {
+          "client_id": "231495338369-qnc4sju0t8rj1vlcfa8nvuqsrc8dklh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx4fbV4IIvJU-zyB3KrtLs_hY9ns4Omn0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231495338369-qnc4sju0t8rj1vlcfa8nvuqsrc8dklh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
