@@ -20,7 +20,7 @@
 
 
 public class Config extends AppCompatActivity {
-
+// hello alex
     RadioGroup rg;
     RadioButton rb;
 // bla bal
