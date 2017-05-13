@@ -18,12 +18,13 @@ import android.widget.Toast;
 public class Online extends Activity
        implements AdapterView.OnItemClickListener
 {   long x;
-    var marius;
-    marius deprecated;
+   // var marius;
+ //   marius deprecated;
     ListView list_color;
     ListView list_shape;
-    SeekBar seek_acc;
-    SeekBar seek_radius;
+    static SeekBar  seek_acc;
+    static  SeekBar   seek_radius;
+    static boolean batt;
     int pos=2;
     int sh=1;
     int col=1;
@@ -46,6 +47,9 @@ public class Online extends Activity
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,colors);
         list_color.setAdapter(adapter2);
         list_color.setOnItemClickListener(this);
+        seek_acc= (SeekBar) findViewById(R.id.seekBar_acc);
+        seek_radius= (SeekBar) findViewById(R.id.seekBar_radius);
+
 
 
     }
@@ -103,6 +107,7 @@ public class Online extends Activity
         // vreau cu commit in loc de apply pentru ca sa mi modifice instant programu
         editor.commit();
     }
+
     public void savePref (int i,int s){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -113,6 +118,92 @@ public class Online extends Activity
         // vreau cu commit in loc de apply pentru ca sa mi modifice instant programu
         editor.commit();
     }
+
+    public void seekbar (final int that){
+
+        if (that == 1){
+        seek_acc.setProgress(show_seek(that));
+
+        seek_acc.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    int progress_value;
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        progress_value = progress;
+//                        text_view.setText("Covered : " + progress + " / " +seek_bar.getMax());
+                        Toast.makeText(Online.this,"SeekBar in progress",Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        Toast.makeText(Online.this,"SeekBar in StartTracking",Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+//                        text_view.setText("Covered : " + progress_value + " / " +seek_bar.getMax());
+                        Toast.makeText(Online.this,"SeekBar in StopTracking",Toast.LENGTH_LONG).show();
+                        saveSeek(that,progress_value);
+                    }
+                }
+        );}
+        else  {      seek_radius.setProgress(show_seek(that));
+        seek_radius.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    int progress_value;
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        progress_value = progress;
+//                        text_view.setText("Covered : " + progress + " / " +seek_bar.getMax());
+                        Toast.makeText(Online.this,"SeekBar in progress",Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        Toast.makeText(Online.this,"SeekBar in StartTracking",Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+//                        text_view.setText("Covered : " + progress_value + " / " +seek_bar.getMax());
+                        Toast.makeText(Online.this,"SeekBar in StopTracking",Toast.LENGTH_LONG).show();
+                        saveSeek(that,progress_value);
+                    }
+                }
+        );}
+    }
+
+    private void saveSeek(int that, int progress_value) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor ed = sp.edit();
+        if (that == 1)
+           ed.putInt("accuracy", progress_value);
+        else ed.putInt("radius", progress_value);
+        ed.commit();
+    }
+
+    private void battery(boolean x)
+    {   SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor ed = sp.edit();
+        if (x)
+            ed.putBoolean("battery", true);
+        else ed.putBoolean("battery",false);
+        ed.commit();
+
+    }
+
+    private int show_seek( int i) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        int seek ;
+        if (i ==1 )
+            return i = sp.getInt("default_accuracy", 3) ;
+        else return i = sp.getInt("default_radius", 3);
+
+
+    }
+
 }
 
 
