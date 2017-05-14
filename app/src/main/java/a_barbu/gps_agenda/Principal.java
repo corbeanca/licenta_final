@@ -34,6 +34,9 @@ import java.util.List;
 public class Principal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, View.OnClickListener {
 
+
+
+
     GoogleMap mGoogleMap ;
 
     @Override
