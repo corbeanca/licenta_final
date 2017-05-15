@@ -34,7 +34,7 @@
             android:src="@mipmap/logot2"
             android:id="@+id/imageView3" />
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -44,7 +44,7 @@
             android:ems="10"
             android:id="@+id/editText" />
 
-        <EditText
+        <TextView
             android:layout_marginTop="70dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

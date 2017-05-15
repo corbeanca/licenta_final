@@ -26,7 +26,7 @@
     <string name="config_save">SAVE</string>
     <string name="config_from">From</string>
     <string name="config_to">To</string>
-    <string name="config_parse">Time parsing didntt work. Try again!</string>
+    <string name="config_parse">Time parsing didnt work. Try again!</string>
     <string name="online_frag_ecotext">When battery level is critical use lower accuracy</string>
     <string name="online_frag_eco">Battery Saving Mode</string>
     <string name="online_frag_sw">Switch</string>
@@ -39,6 +39,13 @@
     <string name="green">Green</string>
     <string name="blue">Blue</string>
     <string name="yellow">Yellow</string>
+    <string name="drawer_main">Main Map</string>
+    <string name="drawer_pref">Preferences</string>
+    <string name="drawer_config">Settings</string>
+    <string name="drawer_pin">Marker</string>
+    <string name="drawer_itinerary">Itineraries</string>
+    <string name="drawer_marker">Individual Markers</string>
+
 
     <string-array name="online_color">
         <item>@string/red</item>

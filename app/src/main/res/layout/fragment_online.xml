@@ -176,7 +176,7 @@
     android:layout_width="100dp"
     android:layout_height="50dp"
     android:text="@string/config_save"
-    android:id="@+id/pref_save"/>
+    android:id="@+id/pref_save" />
         </FrameLayout>
 
     </FrameLayout>

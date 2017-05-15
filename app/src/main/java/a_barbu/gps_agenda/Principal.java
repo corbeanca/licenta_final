@@ -139,15 +139,15 @@ public class Principal extends AppCompatActivity
 
         if (id == R.id.nav_main) {
 
-        } else if (id == R.id.nav_online) {
+        } else if (id == R.id.nav_pref) {
             startActivity(new Intent(Principal.this,Online.class));
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_config) {
             startActivity(new Intent(Principal.this,Config.class));
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_iti) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_pin) {
 
         }
 
@@ -208,8 +208,12 @@ public class Principal extends AppCompatActivity
         zoomLocation(lat, lng, 15);
 
         MarkerOptions optionsMark = new MarkerOptions()
-                .title(locality);
-
+                .title(locality)
+                .position(new LatLng( lat, lng))
+                //memo pt snippet
+                //.snippet( pin_memo = new String())
+        ;
+        mGoogleMap.addMarker(optionsMark);
 
     }
 
