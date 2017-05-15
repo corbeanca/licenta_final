@@ -5,6 +5,7 @@
         android:topRightRadius="0dp"
         android:bottomLeftRadius="80dp"
         android:bottomRightRadius="80dp"
+
         />
     <gradient
         android:gradientRadius="240"
@@ -26,7 +27,7 @@
         android:height="100dp"
         />
     <stroke
-        android:width="15dp"
+        android:width="7dp"
         android:color="#383838"
         />
 </shape>
