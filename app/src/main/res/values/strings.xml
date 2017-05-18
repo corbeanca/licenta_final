@@ -2,10 +2,10 @@
     <string name="app_name">Gps_Agenda</string>
     <string name="title_activity_maps">Map</string>
 
-    <string name="title_activity_config">Config default settings</string>
+    <string name="title_activity_config">Settings</string>
 
     <string name="dummy_content">GPS\nAGENDA</string>
-    <string name="title_activity_principal">Principal</string>
+    <string name="title_activity_principal">Main Map</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -35,34 +35,45 @@
     <string name="online_frag_radius">Default PIN radius (1 - smallest, 5 - biggest)</string>
     <string name="online_frag_shape">Shape</string>
     <string name="online_frag_color">Color</string>
-    <string name="red">Red</string>
-    <string name="green">Green</string>
-    <string name="blue">Blue</string>
-    <string name="yellow">Yellow</string>
     <string name="drawer_main">Main Map</string>
     <string name="drawer_pref">Preferences</string>
     <string name="drawer_config">Settings</string>
     <string name="drawer_pin">Marker</string>
     <string name="drawer_itinerary">Itineraries</string>
     <string name="drawer_marker">Individual Markers</string>
+    <string name="memo">Insert marker desciption(memo)</string>
+    <string name="pin_edit">Edit Marker</string>
+
+    <string-array name="markers">
+        <item><string name="circle_red">Circle Red</string></item>
+        <item><string name="circle_green">Circle Green</string></item>
+        <item><string name="circle_blue">Circle Blue</string></item>
+        <item><string name="circle_yellow">Circle Yellow</string></item>
+        <item><string name="square_red">Square Red</string></item>
+        <item><string name="square_green">Square Green</string></item>
+        <item><string name="square_blue">Square Blue</string></item>
+        <item><string name="square_yellow">Square Yellow</string></item>
+        <item><string name="shield_red">Shield Red</string></item>
+        <item><string name="shield_green">Shield Green</string></item>
+        <item><string name="shield_blue">Shield Blue</string></item>
+        <item><string name="shield_yellow">Shield Yellow</string></item>
+
+    </string-array>
 
 
     <string-array name="online_color">
-        <item>@string/red</item>
-        <item>@string/green</item>
-        <item>@string/blue</item>
-        <item>@string/yellow</item>
+        <item><string name="red">Red</string></item>
+        <item><string name="green">Green</string></item>
+        <item><string name="blue">Blue</string></item>
+        <item><string name= "yellow">Yellow</string></item>
     </string-array>
 
     <string-array name="online_shape">
         <item><string name="circle">Circle</string> </item>
-        <item ><string name="square">Square</string></item>
+        <item><string name="square">Square</string></item>
         <item> <string name="shield">Shield</string> </item>
 
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

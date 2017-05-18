@@ -77,13 +77,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="a_barbu.gps_agenda.Config" />
         </activity>
+        <activity android:name=".PopMarker"
+            android:theme="@style/AppTheme.CustomTheme"
+            >
+        </activity>
 
         <service
             android:name=".GpsService"
             android:enabled="true"
             android:exported="false" />
         <activity
-            android:name=".Online"
+            android:name=".Preferences"
             android:enabled="true"
             android:exported="true" />
 
