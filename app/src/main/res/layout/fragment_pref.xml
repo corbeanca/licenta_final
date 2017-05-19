@@ -17,24 +17,22 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/online_eco">
+        android:layout_height="match_parent">
 
 
         <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+            android:id="@+id/pref_eco">
         <TextView
             android:textAlignment="textEnd"
             android:layout_marginLeft="0dp"
             android:textSize="18dp"
             android:text="@string/online_frag_ecotext"
-            android:layout_width="172dp"
-            android:layout_height="68dp"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
             />
 
             <RadioGroup
@@ -46,40 +44,42 @@
             android:textSize="17dp"
             android:layout_marginLeft="170dp"
             android:text="@string/online_frag_eco"
-            android:layout_width="183dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="select_batt"
             android:id="@+id/but_eco"
-            style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton" />
+            />
         <RadioButton
 
             android:textSize="17dp"
             android:layout_marginLeft="170dp"
             android:text="@string/online_frag_off"
-            android:layout_width="183dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="select_batt"
             android:id="@+id/but_off"
-            style="@style/Widget.AppCompat.CompoundButton.RadioButton" />
+             />
             </RadioGroup>
         </FrameLayout>
 
         <FrameLayout
         android:layout_marginTop="85dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+            android:id="@+id/pref_acc">
         <TextView
             android:textAlignment="textEnd"
-            android:layout_marginLeft="0dp"
             android:textSize="18dp"
             android:text="@string/online_frag_acc"
-            android:layout_width="172dp"
-            android:layout_height="68dp" />
+            android:layout_width="190dp"
+            android:layout_height="wrap_content" />
 
             <SeekBar
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="170dp"
-                android:layout_width="180dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="190dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/seekBar_acc"
                 android:max="5"
@@ -90,23 +90,21 @@
         </FrameLayout>
 
          <FrameLayout
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="140dp"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_height="wrap_content"
+             android:id="@+id/pref_rad">
              <TextView
                  android:textAlignment="textEnd"
-                 android:layout_marginLeft="0dp"
                  android:textSize="18dp"
                  android:text="@string/online_frag_radius"
-                 android:layout_width="172dp"
-                 android:layout_height="68dp" />
+                 android:layout_width="190dp"
+                 android:layout_height="wrap_content" />
 
              <SeekBar
-                 android:layout_marginTop="20dp"
-                 android:layout_marginLeft="170dp"
-                 android:layout_width="180dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginLeft="190dp"
+                 android:layout_width="160dp"
                  android:layout_height="wrap_content"
                  android:id="@+id/seekBar_radius"
                  android:max="5"
@@ -114,15 +112,34 @@
 
 
          </FrameLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="190dp">
+    <TextView
+        android:layout_width="190dp"
+        android:textAlignment="textEnd"
+        android:layout_height="wrap_content"
+        android:text="@string/pref_pinsize"
+        android:textSize="17dp"/>
+    <SeekBar
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="190dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar_size"
+        android:max="2"
+        android:progress="1" />
+
+
+</FrameLayout>
 
         <FrameLayout
-      android:layout_marginTop="270dp"
+      android:layout_marginTop="225dp"
       android:layout_width="match_parent"
-      android:layout_height="234dp"
-      android:layout_alignParentTop="true"
-      android:layout_centerHorizontal="true">
+      android:layout_height="234dp">
             <TextView
-                android:text="PINs"
+                android:text="@string/pref_pin"
                 android:textSize="20dp"
                 android:layout_marginLeft="150dp"
                 android:textAlignment="center"

@@ -14,10 +14,23 @@
     <string name="config_bicycle">Bicicletă</string>
     <string name="config_car">Mașină</string>
     <string name="config_from">De la ora</string>
-    <string name="config_save">Salvează</string>
+    <string name="config_save">GATA</string>
     <string name="config_to">La ora</string>
     <string name="config_transit">Tranzit</string>
     <string name="config_walk">Mers</string>
     <string name="dummy_content">Agendă GPS</string>
     <string name="config_parse">Nu a mers parsarea timpului, introduceti din nou respectand formatul</string>
+    <string name="online_frag_acc">Precizie PIN implicită (1 -mare, 5 -mică)</string>
+    <string name="online_frag_radius">Rază PIN implicită (1 -mică, 5 -mare)</string>
+    <string name="online_frag_shape">Formă</string>
+    <string name="online_frag_sw">Buton</string>
+    <string name="pin_edit">Editează PIN</string>
+    <string name="principal_search_button">Căutare</string>
+    <string name="principal_hint_place">Ce loc dorești?</string>
+    <string name="online_frag_off">Închide serviciul</string>
+    <string name="online_frag_ecotext">Când nivelul bateriei este critic</string>
+    <string name="online_frag_eco">Mod eco</string>
+    <string name="pref_pin">Marker</string>
+    <string name="pref_pinsize">Mărime PIN implicită</string>
+    <string name="online_frag_color">Culoare</string>
 </resources>

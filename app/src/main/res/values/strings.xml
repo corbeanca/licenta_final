@@ -23,18 +23,19 @@
     <string name="config_car">Car</string>
     <string name="config_transit">Transit</string>
     <string name="config_bicycle">Bicycle</string>
-    <string name="config_save">SAVE</string>
+    <string name="config_save">DONE</string>
     <string name="config_from">From</string>
     <string name="config_to">To</string>
     <string name="config_parse">Time parsing didnt work. Try again!</string>
-    <string name="online_frag_ecotext">When battery level is critical use lower accuracy</string>
+    <string name="online_frag_ecotext">When battery level is critical</string>
     <string name="online_frag_eco">Battery Saving Mode</string>
     <string name="online_frag_sw">Switch</string>
-    <string name="online_frag_off">Turn Off service entirely</string>
-    <string name="online_frag_acc">Default accuracy for new PINs (1 - highest, 5 - lowest)</string>
+    <string name="online_frag_off">Turn Off Service </string>
+    <string name="online_frag_acc">Default PIN accuracy (1 - highest, 5 - lowest)</string>
     <string name="online_frag_radius">Default PIN radius (1 - smallest, 5 - biggest)</string>
     <string name="online_frag_shape">Shape</string>
     <string name="online_frag_color">Color</string>
+    <string name="pref_pin">PINs</string>
     <string name="drawer_main">Main Map</string>
     <string name="drawer_pref">Preferences</string>
     <string name="drawer_config">Settings</string>
@@ -43,6 +44,10 @@
     <string name="drawer_marker">Individual Markers</string>
     <string name="memo">Insert marker desciption(memo)</string>
     <string name="pin_edit">Edit Marker</string>
+    <string name="pref_pinsize">Default PIN size on map</string>
+    <string name="pop_radius">Radius</string>
+    <string name="pop_accu">Accuracy</string>
+    <string name="pop_size">Size</string>
 
     <string-array name="markers">
         <item><string name="circle_red">Circle Red</string></item>
