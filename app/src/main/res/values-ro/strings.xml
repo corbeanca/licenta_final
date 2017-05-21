@@ -33,4 +33,6 @@
     <string name="pref_pin">Marker</string>
     <string name="pref_pinsize">Mărime PIN implicită</string>
     <string name="online_frag_color">Culoare</string>
+    <string name="config_lang">Limba</string>
+    <string name="config_l">Romana</string>
 </resources>

@@ -11,6 +11,12 @@
 
         android:background="#ddefdd"
         tools:context="a_barbu.gps_agenda.Markeropt">
+        <ImageView
+            android:id="@+id/new_marker"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="130dp"
+            android:background="@color/black_overlay"/>
 
 
         <ListView
@@ -28,12 +34,7 @@
             android:layout_marginTop="210dp"
             android:hint="@string/memo" />
 
-        <ImageView
-            android:id="@+id/new_marker"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="130dp"
-            android:background="@color/black_overlay"/>
+
         <Button
             android:layout_marginTop="80dp"
             android:layout_gravity="center"

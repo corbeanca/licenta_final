@@ -48,6 +48,9 @@
     <string name="pop_radius">Radius</string>
     <string name="pop_accu">Accuracy</string>
     <string name="pop_size">Size</string>
+    <string name="config_lang">Language</string>
+    <string name="config_l">English</string>
+    <string name="config_sync">Sync content with cloud</string>
 
     <string-array name="markers">
         <item><string name="circle_red">Circle Red</string></item>
