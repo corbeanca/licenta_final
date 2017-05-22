@@ -51,6 +51,7 @@
     <string name="config_lang">Language</string>
     <string name="config_l">English</string>
     <string name="config_sync">Sync content with cloud</string>
+    <string name="drawer_signout">Sign Out</string>
 
     <string-array name="markers">
         <item><string name="circle_red">Circle Red</string></item>

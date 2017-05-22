@@ -32,5 +32,8 @@
                 android:title="@string/drawer_marker" />
         </menu>
     </item>
+    <item android:id="@+id/nav_signout"
+        android:title="@string/drawer_signout"
+        android:icon="@drawable/cast_ic_mini_controller_mute"/>
 
 </menu>
