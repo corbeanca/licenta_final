@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="100dp"
-        android:src="@drawable/cast_album_art_placeholder"/>
+        android:src="@mipmap/pinwindow" />
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="120dp"
         android:orientation="vertical"
         android:weightSum="1">
 
         <EditText
+            android:id="@+id/pin_w_memo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Memo"
-            android:inputType="text"
-            android:id="@+id/pin_w_memo" />
-        <TextView
+            android:inputType="textMultiLine"
+            android:lines="2" />
 
+
+        <TextView
+            android:id="@+id/pin_w_locality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pin_w_locality"/>
-
-
-
-
+            android:text="@string/pinwindow_pass"/>
+        <TextView
+            android:id="@+id/pinwin_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>

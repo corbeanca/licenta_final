@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="252dp"
+    android:layout_height="296dp"
+    android:background="@drawable/backgr_border"
+    android:padding="10dp"
 
-    <FrameLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="380dp"
-
-        android:background="#ddefdd"
-        tools:context="a_barbu.gps_agenda.Markeropt">
+    >
+<!-- an avut frame layout cu tools:context .... Markeropt-->
         <ImageView
             android:id="@+id/new_marker"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="130dp"
-            android:background="@color/black_overlay"/>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@+id/list_markerop1"
+            android:layout_marginLeft="10dp"
+            />
 
 
         <ListView
             android:id="@+id/list_markerop1"
-            android:layout_width="130dp"
-            android:layout_height="200dp">
+            android:layout_width="110dp"
+            android:layout_height="190dp"
+           >
 
         </ListView>
 
@@ -31,67 +30,74 @@
             android:id="@+id/frag_memo"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginTop="210dp"
-            android:hint="@string/memo" />
+            android:hint="@string/memo"
+            android:layout_below="@+id/list_markerop1"
+            android:textSize="15dp"
+           />
 
 
         <Button
-            android:layout_marginTop="80dp"
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:id="@+id/save_pin"
             android:text="@string/config_save"
-            android:onClick=""/>
+            android:layout_below="@+id/frag_memo"
+            android:layout_alignEnd="@+id/pop_pinsize" />
 
         <TextView
-            android:textSize="17dp"
-            android:layout_marginTop="88dp"
-            android:layout_marginStart="130dp"
+            android:textSize="16dp"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop_size"/>
+            android:text="@string/pop_size"
+            android:id="@+id/textView"
+            android:layout_below="@+id/new_marker"
+            android:layout_alignStart="@+id/new_marker" />
 
         <SeekBar
             android:id="@+id/pop_pinsize"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="110dp"
-            android:max="2" />
+            android:max="2"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/new_marker"
+            android:layout_alignStart="@+id/textView" />
 
         <SeekBar
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="150dp"
+
             android:id="@+id/pop_radius"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:max="5" />
+            android:max="5"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/pop_pinsize"
+            android:layout_alignStart="@+id/textView2" />
         <TextView
-            android:textSize="17dp"
-            android:layout_marginTop="130dp"
-            android:layout_marginStart="130dp"
+            android:textSize="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop_radius"/>
+            android:text="@string/pop_radius"
+            android:id="@+id/textView2"
+            android:layout_alignStart="@+id/textView"
+            android:layout_below="@+id/pop_pinsize" />
         <SeekBar
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="190dp"
+
             android:id="@+id/pop_accu"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:max="5" />
+            android:max="5"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/pop_radius"
+            android:layout_alignStart="@+id/textView3" />
         <TextView
-            android:textSize="17dp"
-            android:layout_marginTop="170dp"
-            android:layout_marginStart="130dp"
+            android:textSize="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pop_accu"/>
-
-
-
-    </FrameLayout>
+            android:text="@string/pop_accu"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/pop_radius"
+            android:layout_alignStart="@+id/pop_radius" />
 
 
 

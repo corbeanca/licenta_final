@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    android:id="@+id/side_marker_color">
+
+
+    <ListView
+        android:id="@+id/side_colorlist"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:descendantFocusability="blocksDescendants"
+       >
+
+    </ListView>
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/side_colorhide"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:text="|"
+        android:layout_below="@+id/side_colorlist"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/side_update_markers" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:text="@string/side_colorupd"
+        android:layout_alignBottom="@+id/side_colorhide"
+        android:layout_alignEnd="@+id/side_colorlist"
+        android:id="@+id/side_update_markers" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/side_colorRad"
+        android:layout_below="@+id/side_update_markers"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:textSize="15dp"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/side_color_sw"
+        android:layout_below="@id/side_update_markers"
+        android:layout_alignEnd="@+id/side_colorlist"
+        android:onClick="changeDisplayRadius"/>
+</RelativeLayout>

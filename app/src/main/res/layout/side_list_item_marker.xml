@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:id="@+id/list_color_row"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <ImageView
+        android:paddingLeft="2dp"
+        android:id="@+id/side_list_marker_img"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/calendar"
+        />
+
+    <TextView
+        android:id="@+id/side_list_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/side_list_marker_img"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:textSize="14dp"
+        />
+
+    <CheckBox
+        android:id="@+id/side_list_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:clickable="false"
+        />
+
+</RelativeLayout>

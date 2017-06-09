@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:background="@drawable/backgr_border"
+    android:padding="10dp">
+
+    <ListView
+        android:id="@+id/popiti_list"
+        android:layout_width="130dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:hint="@string/popiti_name"
+        android:id="@+id/popiti_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/popiti_list"
+        android:layout_alignParentStart="true"
+        android:textSize="15dp"/>
+    <EditText
+        android:hint="@string/popiti_desc"
+        android:layout_below="@id/popiti_name"
+        android:id="@+id/popiti_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"/>
+    <ImageView
+        android:src="@mipmap/iti_plus"
+        android:id="@+id/popiti_plus"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:onClick="clickIPlus"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/popiti_list" />
+    <ImageView
+        android:layout_below="@+id/popiti_plus"
+        android:layout_toRightOf="@+id/popiti_list"
+        android:src="@mipmap/update"
+        android:id="@+id/popiti_update"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:onClick="clickUpdate"/>
+    <ImageView
+        android:layout_below="@+id/popiti_update"
+        android:layout_toRightOf="@+id/popiti_list"
+        android:src="@mipmap/iti_minus"
+        android:id="@+id/popiti_minus"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:onClick="clickIMinus"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/popiti_name"
+        android:id="@+id/popiti_exists"
+        android:paddingTop="15dp"
+        android:text="@string/popiti_exists"
+        android:visibility="invisible"
+        tools:textColor="@android:color/holo_red_dark" />
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/popiti_calendar"
+        android:layout_below="@id/popiti_desc"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/calendar"
+
+       />
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:id="@+id/popiti_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/popiti_date"
+        android:layout_marginStart="10dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/popiti_desc"
+        android:layout_toEndOf="@+id/popiti_calendar"
+        android:fontFamily="casual"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
