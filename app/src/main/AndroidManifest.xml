@@ -79,6 +79,7 @@
         </activity>
         <activity android:name=".PopMarker"
             android:theme="@style/AppTheme.CustomTheme"
+            android:windowSoftInputMode="adjustPan"
             >
         </activity>
 
@@ -86,6 +87,12 @@
             android:name=".GpsService"
             android:enabled="true"
             android:exported="false" />
+
+        <service
+            android:name=".GeofenceTransition"
+            android:enabled="true"
+            android:exported="false" />
+
         <activity
             android:name=".Preferences"
             android:enabled="true"
@@ -94,7 +101,12 @@
         <receiver
             android:name=".Notif_receiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true"/>
+        <activity android:name=".PopIti"
+            android:theme="@style/AppTheme.CustomTheme"
+            android:windowSoftInputMode="adjustPan"/>
+            <!-- pot sa ii fac alt theme -->
+
     </application>
 
 </manifest>

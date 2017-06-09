@@ -42,7 +42,7 @@
     <string name="drawer_pin">Marker</string>
     <string name="drawer_itinerary">Itineraries</string>
     <string name="drawer_marker">Individual Markers</string>
-    <string name="memo">Insert marker desciption(memo)</string>
+    <string name="memo">Insert marker desciption (memo)</string>
     <string name="pin_edit">Edit Marker</string>
     <string name="pref_pinsize">Default PIN size on map</string>
     <string name="pop_radius">Radius</string>
@@ -52,6 +52,14 @@
     <string name="config_l">English</string>
     <string name="config_sync">Sync content with cloud</string>
     <string name="drawer_signout">Sign Out</string>
+    <string name="side_colorupd">Update</string>
+    <string name="side_colorRad">Show Radius</string>
+
+    <string name="popiti_name">Insert new name</string>
+    <string name="popiti_desc">Insert new description</string>
+    <string name="popiti_exists">Name already exists</string>
+    <string name="popiti_date">No date selected</string>
+    <string name="pinwindow_pass">Passed- 0</string>
 
     <string-array name="markers">
         <item><string name="circle_red">Circle Red</string></item>
@@ -68,7 +76,6 @@
         <item><string name="shield_yellow">Shield Yellow</string></item>
 
     </string-array>
-
 
     <string-array name="online_color">
         <item><string name="red">Red</string></item>
