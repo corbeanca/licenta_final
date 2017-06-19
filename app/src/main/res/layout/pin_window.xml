@@ -1,43 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/backgr_tansparent2">
 
     <ImageView
         android:layout_width="60dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/pinwindow" />
+        android:layout_height="110dp"
+        android:src="@mipmap/pinwindow"
+        android:id="@+id/imageView3" />
 
-    <LinearLayout
+
+    <TextView
+        android:textSize="17dp"
+        android:hint="@string/pin_w_title"
+        android:id="@+id/pin_w_title"
         android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:orientation="vertical"
-        android:weightSum="1">
-
-        <EditText
-            android:id="@+id/pin_w_memo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Memo"
-            android:inputType="textMultiLine"
-            android:lines="2" />
-
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageView3"
+        android:fontFamily="monospace"/>
 
         <TextView
             android:id="@+id/pin_w_locality"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pin_w_passed"
+            android:layout_toEndOf="@+id/imageView3"
+            android:textColor="@color/maro"/>
+
+        <TextView
+            android:id="@+id/pin_w_last_visit"
+            android:text="@string/pin_w_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pin_w_locality"
+            android:layout_toEndOf="@+id/imageView3"
+            android:textSize="11dp"/>
+
+        <TextView
+            android:id="@+id/pin_w_last"
+            android:text="@string/pin_w_last_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pin_w_last_visit"
+            android:layout_toEndOf="@+id/imageView3" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pinwindow_pass"/>
+            android:text="@string/pinw_pass"
+            android:id="@+id/pin_w_passed"
+            android:layout_below="@+id/pin_w_memo"
+            android:layout_toEndOf="@+id/imageView3"
+            android:textSize="11dp"/>
         <TextView
             android:id="@+id/pinwin_counter"
+            android:layout_toRightOf="@id/pin_w_passed"
+            android:layout_below="@+id/pin_w_memo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-    </LinearLayout>
 
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/pin_w_memo"
+        android:layout_width="wrap_content"
+        android:maxEms="20"
+        android:layout_height="wrap_content"
+        android:hint="Memo"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:layout_below="@+id/pin_w_title"
+        android:layout_toEndOf="@+id/imageView3" />
+
+
+</RelativeLayout>

@@ -3,7 +3,7 @@
     android:id="@+id/sideLayout"
     android:layout_width="120dp"
     android:layout_height="250dp"
-    android:background="@color/black_overlay"
+    android:background="@drawable/backgr_tansparent"
     >
 
     <ListView
@@ -18,21 +18,44 @@
 
 
     <ImageView
-        android:id="@+id/side_plus_onIti"
+        android:padding="10dp"
+        android:src="@mipmap/iti_plus"
+        android:id="@+id/side_plus"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@mipmap/iti_plus"
         android:layout_below="@+id/side_ITIlist"
         android:layout_alignParentStart="true"
-        android:onClick="clickPlus"/>
+        />
     <ImageView
+        android:padding="10dp"
         android:src="@mipmap/iti_minus"
-        android:id="@+id/side_minus_onIti"
+        android:id="@+id/side_minus"
         android:layout_marginLeft="60dp"
         android:layout_width="58dp"
         android:layout_height="60dp"
         android:layout_below="@+id/side_ITIlist"
         android:layout_alignParentEnd="true"
-        android:onClick="clickMinus"/>
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/side_principal_text"
+        android:hint="@string/side_principal_hint"
+        android:layout_below="@+id/side_plus"
+        android:layout_alignParentStart="true"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:background="@color/white_transp"
+        android:textAlignment="center"
+        android:textSize="12dp"
+        android:lines="2"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/side_principal_save"
+        android:text="@string/config_save"
+        android:backgroundTint="@color/white_transp"
+        android:layout_below="@+id/side_principal_text"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

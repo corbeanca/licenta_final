@@ -13,15 +13,17 @@
     tools:context="a_barbu.gps_agenda.Principal"
     tools:showIn="@layout/app_bar_principal">
 
-    <Button
+    <ImageView
         android:id="@+id/sideLayout"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="30dp"
+
+        android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="310dp"
         android:onClick="ClickSide"
-        android:text="|"
-        tools:visibility="invisible" />
+        android:src="@mipmap/add_iti"
+        tools:visibility="invisible"
+        />
+    <!--style="@style/Widget.AppCompat.Button.Colored"-->
 
     <LinearLayout
         android:id="@+id/l_principal"
@@ -34,7 +36,7 @@
 
         <EditText
             android:id="@+id/search_field"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:hint="@string/principal_hint_place"
@@ -67,11 +69,11 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/l_color"
-        android:layout_marginTop="40dp"
-        android:layout_alignLeft="@+id/l_principal"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="300dp"
-        android:visibility="invisible">
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/l_secundar"
+        android:layout_alignParentStart="true">
         <include layout="@layout/side_marker_color"></include>
 
     </RelativeLayout>

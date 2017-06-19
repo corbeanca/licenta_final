@@ -32,7 +32,7 @@
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:src="@mipmap/logot2"
-            android:id="@+id/imageView3" />
+            android:id="@+id/config_logo" />
 
         <TextView
             android:layout_width="match_parent"

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="252dp"
-    android:layout_height="296dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/backgr_border"
     android:padding="10dp"
 
@@ -24,16 +24,38 @@
            >
 
         </ListView>
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/popmk_title"
+    android:hint="@string/popmk_title_hint"
+    android:textSize="15dp"
+    android:layout_below="@+id/list_markerop1"
+    android:layout_alignParentStart="true"
+    android:maxLength="32"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/popmk_maxC"
+            android:paddingTop="15dp"
+            android:text="@string/popmk_title_cond"
+            tools:textColor="@android:color/holo_red_dark"
+            android:layout_below="@+id/list_markerop1"
+            android:textSize="10dp"
+            android:layout_alignParentEnd="true" />
         <EditText
 
             android:id="@+id/frag_memo"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:hint="@string/memo"
-            android:layout_below="@+id/list_markerop1"
             android:textSize="15dp"
-           />
+            android:layout_below="@+id/popmk_maxC"
+            android:layout_alignParentStart="true"
+            android:maxLines="3"
+
+            />
 
 
         <Button
