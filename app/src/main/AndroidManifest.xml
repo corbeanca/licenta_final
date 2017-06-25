@@ -80,10 +80,16 @@
                 android:value="a_barbu.gps_agenda.Config" />
         </activity>
         <activity android:name=".PopMarker"
+
             android:theme="@style/AppTheme.CustomTheme"
-            android:windowSoftInputMode="adjustPan"
-            >
+            android:windowSoftInputMode="adjustPan">
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+
+
         </activity>
+        <activity android:name=".Itinerary_mk"
+            android:theme="@style/AppTheme.CustomTheme"
+            android:windowSoftInputMode="adjustPan"/>
 
         <service
             android:name=".GpsService"

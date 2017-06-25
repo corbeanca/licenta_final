@@ -22,6 +22,7 @@
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
         android:textSize="14dp"
+        android:textStyle="bold"
         />
 
     <CheckBox

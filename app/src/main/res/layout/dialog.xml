@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/a"
+        android:gravity="center"
+        android:background="#DA5F6A"
+        android:src="@drawable/warning"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_text"
+        android:id="@+id/text_dialog"
+        android:layout_below="@+id/a"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:textSize="16sp"
+        android:textColor="#ff000000"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/dialog_mk"
+        android:text="aaaaa"
+        android:textSize="18dp"
+        android:layout_alignTop="@+id/text_dialog"
+        android:layout_below="@id/text_dialog"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:paddingTop="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="@string/dialog_yes"
+        android:id="@+id/dialog_yes"
+        android:background="@color/black_overlay"
+        android:layout_marginLeft="50dp"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/text_dialog"
+         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="@string/dialog_no"
+        android:id="@+id/dialog_no"
+
+        android:layout_below="@+id/text_dialog"
+        android:layout_marginBottom="20dp"
+        android:background="@color/black_overlay"
+        android:layout_toEndOf="@id/dialog_yes"
+        android:layout_marginLeft="15dp"
+        android:textColor="#ffffffff" />
+
+</RelativeLayout>

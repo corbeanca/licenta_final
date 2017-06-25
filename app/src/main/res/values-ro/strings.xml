@@ -9,7 +9,6 @@
     <string name="navigation_drawer_close">Inchide exploratorul</string>
     <string name="navigation_drawer_open">Deschide exploratorul</string>
     <string name="title_activity_config">Configurează setările de bază</string>
-    <string name="title_activity_maps">Hartă</string>
     <string name="title_activity_principal">Hartă Principală</string>
     <string name="config_bicycle">Bicicletă</string>
     <string name="config_car">Mașină</string>
@@ -18,13 +17,9 @@
     <string name="config_to">Până la</string>
     <string name="config_transit">Tranzit</string>
     <string name="config_walk">Mers</string>
-    <string name="dummy_content">Agendă GPS</string>
-    <string name="config_parse">Nu a mers parsarea timpului, introduceti din nou respectand formatul</string>
     <string name="online_frag_acc">Precizie PIN implicită (1 -mare, 5 -mică)</string>
     <string name="online_frag_radius">Rază PIN implicită (1 -mică, 5 -mare)</string>
     <string name="online_frag_shape">Formă</string>
-    <string name="online_frag_sw">Buton</string>
-    <string name="pin_edit">Editează PIN</string>
     <string name="principal_search_button">Căutare</string>
     <string name="principal_hint_place">Ce loc dorești?</string>
     <string name="online_frag_off">Închide serviciul</string>
@@ -57,4 +52,11 @@
     <string name="popmk_empty">(fără titlu)</string>
     <string name="popmk_title_hint">Titlu nou</string>
     <string name="side_colorRad">Rază</string>
+    <string name="dialog_no">Anulează</string>
+    <string name="dialog_text">Șterge markerul</string>
+    <string name="dialog_yes">Șterge</string>
+    <string name="geo_enter">Ești aproape de</string>
+    <string name="geo_exit">Ai trecut de</string>
+    <string name="side_colorupd">Modifică</string>
+    <string name="side_principal_hint">Selectează itinerariul</string>
 </resources>

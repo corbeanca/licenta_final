@@ -2,23 +2,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="350dp"
+    android:layout_width="290dp"
+    android:layout_height="390dp"
     android:background="@drawable/backgr_border"
     android:padding="10dp">
+
+
 
     <ListView
         android:id="@+id/popiti_list"
         android:layout_width="130dp"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
+
+
+
+    <RadioGroup
+        android:id="@+id/popiti_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/popiti_plus">
+
+    <RadioButton
+    android:id="@+id/popiti_car"
+    android:button="@mipmap/car_g"
+    android:layout_width="55dp"
+    android:layout_height="50dp"
+    android:onClick="select_move"
+    />
+
+<RadioButton
+    android:id="@+id/popiti_walk"
+    android:button="@mipmap/walk_g"
+    android:layout_width="55dp"
+    android:layout_height="50dp"
+    android:onClick="select_move"
+    />
+
+<RadioButton
+    android:id="@+id/popiti_transit"
+    android:button="@mipmap/transit_g"
+    android:layout_width="55dp"
+    android:layout_height="50dp"
+    android:onClick="select_move"
+    />
+
+<RadioButton
+    android:id="@+id/popiti_bicycle"
+    android:button="@mipmap/bicycle_g"
+    android:layout_width="55dp"
+    android:layout_height="50dp"
+    android:onClick="select_move"
+     />
+
+
+    </RadioGroup>
+
 
     <EditText
         android:hint="@string/popiti_name"
         android:id="@+id/popiti_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/popiti_list"
         android:layout_alignParentStart="true"
         android:textSize="15dp"/>
@@ -33,26 +81,39 @@
         android:src="@mipmap/iti_plus"
         android:id="@+id/popiti_plus"
         android:layout_width="40dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:onClick="clickIPlus"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/popiti_list" />
+        android:layout_toEndOf="@+id/popiti_list"
+        android:padding="2dp"/>
     <ImageView
-        android:layout_below="@+id/popiti_plus"
-        android:layout_toRightOf="@+id/popiti_list"
         android:src="@mipmap/update"
         android:id="@+id/popiti_update"
         android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:onClick="clickUpdate"/>
+        android:layout_height="40dp"
+        android:onClick="clickUpdate"
+        android:padding="1dp"
+        android:layout_below="@+id/popiti_minus"
+        android:layout_toEndOf="@+id/popiti_list" />
     <ImageView
+        android:src="@mipmap/up_down"
+        android:id="@+id/popiti_up_down"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:onClick="clickUpdate"
+        android:padding="2dp"
         android:layout_below="@+id/popiti_update"
+        android:layout_toEndOf="@+id/popiti_list"
+        android:visibility="invisible"/>
+    <ImageView
+        android:layout_below="@+id/popiti_plus"
         android:layout_toRightOf="@+id/popiti_list"
         android:src="@mipmap/iti_minus"
         android:id="@+id/popiti_minus"
         android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:onClick="clickIMinus"/>
+        android:layout_height="40dp"
+        android:onClick="clickIMinus"
+        android:padding="2dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,10 +121,23 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/popiti_name"
         android:id="@+id/popiti_exists"
-        android:paddingTop="15dp"
+        android:paddingTop="5dp"
         android:text="@string/popiti_exists"
         android:visibility="invisible"
-        tools:textColor="@android:color/holo_red_dark" />
+        android:background="@color/white_transp"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/popiti_name"
+        android:id="@+id/popiti_special"
+        android:paddingTop="5dp"
+        android:text="@string/popiti_special"
+        android:visibility="invisible"
+        android:background="@color/white_transp"
+        android:textColor="@android:color/holo_red_dark" />
     <ImageView
         android:clickable="true"
         android:id="@+id/popiti_calendar"
@@ -73,18 +147,25 @@
         android:src="@mipmap/calendar"
 
        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/popiti_add_cal"
+        android:onClick="createEvent"
+        android:src="@mipmap/calendar_add"
+        android:layout_alignBottom="@+id/popiti_date"
+        android:layout_alignEnd="@+id/popiti_rg" />
     <TextView
-        android:layout_marginLeft="10dp"
+
         android:layout_marginTop="7dp"
         android:id="@+id/popiti_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/popiti_date"
-        android:layout_marginStart="10dp"
         android:textSize="20dp"
-        android:layout_below="@+id/popiti_desc"
-        android:layout_toEndOf="@+id/popiti_calendar"
         android:fontFamily="casual"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_below="@+id/popiti_desc"
+        android:layout_toEndOf="@+id/popiti_calendar" />
 
 </RelativeLayout>

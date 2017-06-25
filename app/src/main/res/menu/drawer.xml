@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -8,18 +9,22 @@
             android:title="@string/drawer_main" />
         <item
             android:id="@+id/nav_pref"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/pref2"
             android:title="@string/drawer_pref" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_calendar"
+            android:icon="@mipmap/calendar_ic"
+            android:title="Calendar" />
         <item
             android:id="@+id/nav_config"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/drawer_config" />
-    </group>
 
+    <item
+        android:id="@+id/nav_signout"
+        android:icon="@mipmap/sign_out"
+        android:title="@string/drawer_signout" />
+    </group>
     <item android:title="@string/drawer_pin">
         <menu>
             <item
@@ -32,8 +37,5 @@
                 android:title="@string/drawer_marker" />
         </menu>
     </item>
-    <item android:id="@+id/nav_signout"
-        android:title="@string/drawer_signout"
-        android:icon="@drawable/cast_ic_mini_controller_mute"/>
 
 </menu>

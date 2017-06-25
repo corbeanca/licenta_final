@@ -26,7 +26,7 @@
         android:layout_marginLeft="140dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@color/cast_expanded_controller_ad_label_background_color" />
+        android:background="@color/black_overlay" />
 
     <TextView
         android:id="@+id/U_email"

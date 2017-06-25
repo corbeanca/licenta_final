@@ -1,58 +1,88 @@
 package a_barbu.gps_agenda;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
-
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SignIn extends AppCompatActivity {
 
     private SignInButton mGoogleBtn;
     private static final int RC_SIGN_IN = 1;
-    private GoogleApiClient mGoogleApiClient;
-    private FirebaseAuth mAuth;
+    static GoogleApiClient mGoogleApiClient;
+    static FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    static FirebaseDatabase database= FirebaseDatabase.getInstance();
+    static FirebaseUser user;
+    DatabaseReference Ref = database.getInstance().getReference();
     private static final String TAG = "MAIN_ACTIVITY";
+    static String Name ;
+    static String Email ;
+    static Uri Photo;
+    static boolean first;
+    static int sw;
+    String pres="a";
+//    String em = "alexandrubarbu93@gmail,com";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView( R.layout.activity_main);
+        pres="a";
+        if( getIntent().getBooleanExtra("Exit me", false)){
+            android.os.Process.killProcess(android.os.Process.myPid());
+            super.onDestroy();
+           // finish();
+            return; // add this to prevent from doing unnecessary stuffs
+        }
+        sw=0;
         mAuth = FirebaseAuth.getInstance();
         mGoogleBtn = (SignInButton) findViewById( R.id.googleBtn);
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener()
+        {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                boolean first_signIn = isFirst_signIn();
-                if( firebaseAuth.getCurrentUser() != null )
-                    if(first_signIn ) {
+               first=ShowPrefB("first");
 
-                      // Toast.makeText(this,"First time use! Set working time", Toast.LENGTH_LONG).show();
-                    change_use();
-                    startActivity(new Intent(SignIn.this, Config.class));
+                if( firebaseAuth.getCurrentUser() != null ) {
+     //      userPresent();
+                   if (!first)
+                   {
+                               startActivity(new Intent(SignIn.this, Principal.class));
+                               Toast.makeText(SignIn.this, "Welcome back", Toast.LENGTH_SHORT).show();
+
+//                        }
+//
+//                    }.start();
                 }
-                else
-                    startActivity(new Intent(SignIn.this,Principal.class));
+
+                }
             }
         };
         // Configure Google Sign In
@@ -68,7 +98,6 @@ public class SignIn extends AppCompatActivity {
                     }
                 })
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-
                 .build();
         mGoogleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,16 +105,10 @@ public class SignIn extends AppCompatActivity {
                 signIn();
             }
         });
-
     }
-    private boolean isFirst_signIn (){
-        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor ed = sp.edit();
-        boolean first = sp.getBoolean("first_use", true);
-
-        if (first)
-            return true;
-                else return false;
+    private boolean ShowPrefB(String key) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        return sp.getBoolean(key,true);
     }
     @Override
     protected void onStart() {
@@ -94,6 +117,9 @@ public class SignIn extends AppCompatActivity {
     }
 
     private void signIn() {
+        if (mGoogleApiClient.hasConnectedApi(Auth.GOOGLE_SIGN_IN_API)) {
+            mGoogleApiClient.clearDefaultAccountAndReconnect();
+        }
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -102,49 +128,106 @@ public class SignIn extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
+
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
+                Email = account.getEmail();
+                String em = Email.replace(".", ",");
+                Email = em;
+
                 firebaseAuthWithGoogle(account);
+
             } else {
                 // Google Sign In failed, update UI appropriately
-                // ...
+                Toast.makeText(SignIn.this, "Google SignIn failed. Try again!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, SignIn.class));
             }
         }
     }
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
+    private void firebaseAuthWithGoogle(final GoogleSignInAccount account) {
 
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
+                   //     Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
+                        user =  mAuth.getCurrentUser();
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
+                        Name = account.getDisplayName();
+                        Email = account.getEmail();
+                        Photo = account.getPhotoUrl();
+                        String em = Email.replace(".", ",");
+                        Email = em;
+                        SavePref("Name",Name);
+                        SavePref("Email",Email);
+                        SavePref("Photo",Photo.toString());
+
+         //               first =
+           //             CheckPresent();
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(SignIn.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignIn.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                         }
-                        // ...
+                        CheckPresent();
+
                     }
                 });
+
     }
 
-    private void change_use(){
-        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor ed = sp.edit();
-        ed.putBoolean("first_use", false);
-        ed.commit();
+    public void SavePref(String key, String value) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value);
+        editor.commit();
+    }
+    public void SavePref(String key) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(key,true);
+        editor.commit();
     }
 
+    public void CheckPresent () {
+        DatabaseReference Rstart = Ref.child(Email).child("present");
+        Rstart.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                pres = dataSnapshot.getValue(String.class);
+                userPresent();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.v("nu_merge", "cevaaa");
+            }
+        });
+    }
+    public void userPresent(){
+
+            if (pres == null){
+                Ref.child(Email).child("present").setValue("true");
+                    sw=1;
+                SavePref("email",Email);
+                    Toast.makeText(SignIn.this, "Welcome! Configure the settings ", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(SignIn.this, Config.class));
+
+// intr un fel e ok, chiar si daca se da click de doua ori...
+          //      return true;
+        }
+        else if (pres.equals("true")){
+            sw=2;
+                SavePref("email",Email);
+                Toast.makeText(SignIn.this, "User present. Settings have been imported!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(SignIn.this, Principal.class));
+            //   return false;
+        }
+    }
 }
 
 

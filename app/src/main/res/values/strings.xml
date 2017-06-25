@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">Gps_Agenda</string>
-    <string name="title_activity_maps">Map</string>
 
     <string name="title_activity_config">Settings</string>
 
-    <string name="dummy_content">GPS\nAGENDA</string>
     <string name="title_activity_principal">Main Map</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -18,8 +16,6 @@
 
     <string name="principal_search_button">SEARCH</string>
     <string name="principal_hint_place">What place do you need?</string>
-    <string name="header_title2">GPS Agenda</string>
-    <string name="header_name" translatable="false">Barbu Alexandru</string>
 
     <string name="config_walk">Walk</string>
     <string name="config_car">Car</string>
@@ -28,13 +24,11 @@
     <string name="config_save">DONE</string>
     <string name="config_from">From</string>
     <string name="config_to">To</string>
-    <string name="config_parse">Time parsing didn\'t work. Try again!</string>
     <string name="config_l">English</string>
     <string name="config_sync">Sync content with cloud</string>
 
     <string name="online_frag_ecotext">When battery level is critical</string>
     <string name="online_frag_eco">Battery Saving Mode</string>
-    <string name="online_frag_sw">Switch</string>
     <string name="online_frag_off">Turn Off Service </string>
     <string name="online_frag_acc">Default PIN accuracy (1 - highest, 5 - lowest)</string>
     <string name="online_frag_radius">Default PIN radius (1 - smallest, 5 - biggest)</string>
@@ -50,7 +44,6 @@
     <string name="drawer_marker">Individual Markers</string>
 
     <string name="memo">Insert marker desciption (memo)</string>
-    <string name="pin_edit">Edit Marker</string>
 
     <string name="popmk_title_hint">New title </string>
     <string name="popmk_title_cond">(32 ch. max) </string>
@@ -67,11 +60,19 @@
     <string name="side_colorupd">Update</string>
     <string name="side_colorRad">Radius</string>
 
+    <string name="dialog_yes">Delete</string>
+    <string name="dialog_no">Cancel</string>
+    <string name="dialog_text">Delete the marker?</string>
+
 
     <string name="popiti_name">Insert new name</string>
     <string name="popiti_desc">Insert new description</string>
-    <string name="popiti_exists">Name already exists</string>
-    <string name="popiti_date">No date selected</string>
+    <string name="popiti_exists">Name already\n   exists</string>
+    <string name="popiti_date">No date yet</string>
+    <string name="popiti_mk_pres">Add or remove to itinerary from the existing markers</string>
+    <string name="popiti_special">Remove special\n   characters</string>
+
+    <string name="popML_empty">Itinerary is empty</string>
 
 
     <string name="pinw_pass">Passed- </string>
@@ -80,7 +81,6 @@
     <string name="pin_w_last_date">- none yet</string>
 
     <string name="side_principal_hint">Select Itinerary</string>
-
 
 
     <string name="locale_lang">eng</string>
@@ -116,6 +116,5 @@
         <item> <string name="shield">Shield</string> </item>
 
     </string-array>
-
 
 </resources>

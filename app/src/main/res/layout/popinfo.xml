@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="252dp"
+    android:layout_width="250dp"
     android:layout_height="wrap_content"
     android:background="@drawable/backgr_border"
-    android:padding="10dp"
+    android:padding="5dp"
 
     >
 <!-- an avut frame layout cu tools:context .... Markeropt-->
@@ -21,9 +21,10 @@
             android:id="@+id/list_markerop1"
             android:layout_width="110dp"
             android:layout_height="190dp"
-           >
+            android:backgroundTint="@color/white_transp"
 
-        </ListView>
+           />
+
 <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,7 +33,19 @@
     android:textSize="15dp"
     android:layout_below="@+id/list_markerop1"
     android:layout_alignParentStart="true"
+    android:textStyle="bold"
     android:maxLength="32"/>
+
+        <Switch
+            android:id="@+id/pop_active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:rotation="-90"
+            android:layout_above="@+id/pop_pinsize"
+            android:layout_toEndOf="@+id/textView2"
+            android:layout_marginBottom="10dp" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,17 +58,17 @@
             android:textSize="10dp"
             android:layout_alignParentEnd="true" />
         <EditText
-
+            android:textStyle="bold"
             android:id="@+id/frag_memo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/memo"
             android:textSize="15dp"
-            android:layout_below="@+id/popmk_maxC"
-            android:layout_alignParentStart="true"
             android:maxLines="3"
-
-            />
+            android:background="@color/white_transp2"
+            android:layout_below="@+id/popmk_maxC"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true" />
 
 
         <Button
@@ -65,11 +78,13 @@
             android:id="@+id/save_pin"
             android:text="@string/config_save"
             android:layout_below="@+id/frag_memo"
-            android:layout_alignEnd="@+id/pop_pinsize" />
+            android:layout_alignEnd="@+id/pop_pinsize"
+            android:background="@drawable/backgr_buton"
+           />
 
         <TextView
             android:textSize="16dp"
-
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pop_size"
@@ -101,6 +116,7 @@
             android:layout_height="wrap_content"
             android:text="@string/pop_radius"
             android:id="@+id/textView2"
+            android:textStyle="bold"
             android:layout_alignStart="@+id/textView"
             android:layout_below="@+id/pop_pinsize" />
         <SeekBar
@@ -119,7 +135,8 @@
             android:text="@string/pop_accu"
             android:id="@+id/textView3"
             android:layout_below="@+id/pop_radius"
-            android:layout_alignStart="@+id/pop_radius" />
+            android:layout_alignStart="@+id/pop_radius"
+            android:textStyle="bold"/>
 
 
 
